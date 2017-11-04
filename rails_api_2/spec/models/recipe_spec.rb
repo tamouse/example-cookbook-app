@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
-  let(:user) { FactoryBot.create(:user_with_password) }
+  let(:user) { FactoryBot.create(:user) }
   describe 'validations' do
     context "missing name" do
       it "fails validation for missing name" do

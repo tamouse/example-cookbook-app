@@ -29,7 +29,7 @@ RSpec.describe UsersController, type: :controller do
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    FactoryBot.attributes_for(:user_with_password)
+    FactoryBot.attributes_for(:user)
   }
 
   let(:invalid_attributes) {

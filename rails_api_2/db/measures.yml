@@ -1,0 +1,47 @@
+# Seeds for Measure
+---
+- name: kilogram
+  abbrev: kg
+- name: gram
+  abbrev: g
+- name: centigram
+  abbrev: cg
+- name: milligram
+  abbrev: mg
+- name: kilolitre
+  abbrev: kl
+- name: decalitre
+  abbrev: Dl
+- name: centalitre
+  abbrev: Cl
+- name: litre
+  abbrev: l
+- name: centilitre
+  abbrev: cl
+- name: millilitre
+  abbrev: ml
+
+- name: pound
+  abbrev: lb
+- name: ounce
+  abbrev: oz
+
+- name: gallon
+  abbrev: gal
+- name: quart
+  abbrev: qt
+- name: pint
+  abbrev: pt
+- name: cup
+  abbrev: c
+
+- name: teaspoon
+  abbrev: tsp
+- name: tablespoon
+  abbrev: tblsp
+
+- name: whole
+  abbrev: whole
+
+- name: can
+  abbrev: can

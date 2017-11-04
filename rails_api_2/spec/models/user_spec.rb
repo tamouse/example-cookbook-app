@@ -14,8 +14,8 @@ RSpec.describe User, type: :model do
 
     context "unique email" do
       it "validates uniqueness of email" do
-        user1 = FactoryBot.create(:user_with_password)
-        user2 = FactoryBot.build(:user_with_password, email: user1.email)
+        user1 = FactoryBot.create(:user)
+        user2 = FactoryBot.build(:user, email: user1.email)
         aggregate_failures do
           expect(user2.validate).to eq(false)
           expect(user2.errors.full_messages).to include("Email has already been taken")
