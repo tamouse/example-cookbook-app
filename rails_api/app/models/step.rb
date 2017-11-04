@@ -11,7 +11,8 @@ class Step < ApplicationRecord
 
   def set_default_sequence
     unless sequence.present?
-      self.sequence = recipe&.steps&.map(&:sequence)&.max.to_i + 1
+      # NOTE: had to add the `.compact` because some of the step sequences would be nil (like the current one!)
+      self.sequence = recipe&.steps&.map(&:sequence)&.compact&.max.to_i + 1
     end
   end
 end
