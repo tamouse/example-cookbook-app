@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "git@github.com:tamouse/example-cookbook-app.git",
   "author": "Tamara Temple <tamouse@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "echo No tests at the top level. Test each piece separately.",
+  }
 }
