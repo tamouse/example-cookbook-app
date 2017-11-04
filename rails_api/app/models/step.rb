@@ -3,6 +3,9 @@ class Step < ApplicationRecord
 
   before_create :set_default_sequence
 
+  def to_s
+    "#{sequence}. #{description}"
+  end
 
   private
 
