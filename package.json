@@ -1,0 +1,9 @@
+{
+  "name": "example-cookbook-app",
+  "version": "0.1.0",
+  "description": "An example Cookbook app using various api servers and react clients",
+  "main": "index.js",
+  "repository": "git@github.com:tamouse/example-cookbook-app.git",
+  "author": "Tamara Temple <tamouse@gmail.com>",
+  "license": "MIT"
+}
