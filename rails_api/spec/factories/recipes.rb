@@ -2,7 +2,7 @@ require 'faker'
 
 FactoryGirl.define do
   factory :recipe do
-    name {Faker::Book.title}
+    name {Faker::Food.dish}
   end
 end
 
