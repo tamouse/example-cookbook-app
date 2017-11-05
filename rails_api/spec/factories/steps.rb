@@ -1,14 +1,7 @@
-require 'faker'
+require "faker"
 
-
-FactoryGirl.define do
+FactoryBot.define do
   factory :step do
-    description {Faker::Lorem.sentence}
-
-    factory :step_with_sequence do
-      sequence :sequence do |n|
-        n
-      end
-    end
+    description {Faker::Lorem.sentences(rand(3)+1).join(" ")}
   end
 end

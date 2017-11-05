@@ -1,10 +1,9 @@
-require 'faker'
+require "faker"
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :ingredient do
     name {Faker::Food.ingredient}
-    quantity {Faker::Number.between(1,10)}
-    measure {Measure.all.sample}
-    prep_notes {%w[chopped peeled washed mashed crushed].sample}
+    quantity "9.99"
+    measure {Measure.first}
   end
 end

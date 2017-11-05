@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171104111431) do
+ActiveRecord::Schema.define(version: 20171104234702) do
 
   create_table "ingredients", force: :cascade do |t|
-    t.string "name"
     t.integer "recipe_id"
-    t.string "quantity"
+    t.string "name", null: false
+    t.decimal "quantity"
     t.integer "measure_id"
-    t.string "prep_notes"
+    t.text "prep_notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["measure_id"], name: "index_ingredients_on_measure_id"
@@ -25,24 +25,24 @@ ActiveRecord::Schema.define(version: 20171104111431) do
   end
 
   create_table "measures", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name"
     t.string "abbrev"
   end
 
   create_table "recipes", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "description"
-    t.string "notes"
     t.integer "user_id"
+    t.string "name", null: false
+    t.text "description"
+    t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
   create_table "steps", force: :cascade do |t|
-    t.string "description", null: false
-    t.integer "sequence"
     t.integer "recipe_id"
+    t.text "description"
+    t.integer "sequence_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["recipe_id"], name: "index_steps_on_recipe_id"
@@ -50,10 +50,9 @@ ActiveRecord::Schema.define(version: 20171104111431) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
-    t.string "password_digest", null: false
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

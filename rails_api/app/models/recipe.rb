@@ -1,15 +1,12 @@
 class Recipe < ApplicationRecord
   belongs_to :user
 
-  has_many :ingredients, dependent: :delete_all
-  accepts_nested_attributes_for :ingredients
+  has_many :ingredients, dependent: :destroy
+  accepts_nested_attributes_for :ingredients, reject_if: proc {|attributes| attributes['name'].blank?}
 
-  has_many :steps, dependent: :delete_all
-  accepts_nested_attributes_for :steps
+  has_many :steps, dependent: :destroy
+  accepts_nested_attributes_for :steps, reject_if: proc {|attributes| attributes['description'].blank?}
 
   validates_presence_of :name
 
-  def to_param
-    "#{id}-#{name.parameterize}"
-  end
 end
