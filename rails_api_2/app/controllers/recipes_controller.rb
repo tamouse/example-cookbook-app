@@ -45,7 +45,11 @@ class RecipesController < ApplicationController
     end
 
     # Only allow a trusted parameter "white list" through.
+    # Recipes handles nested attributes for ingredients and steps, too
     def recipe_params
-      params.require(:recipe).permit(:user_id, :name, :description, :notes)
+      params.require(:recipe).permit(:user_id, :name, :description, :notes,
+        ingredients_attributes: [:name, :quantity, :measure_id, :prep_notes],
+        steps_attributes: [:description, :sequence_number]
+        )
     end
 end
